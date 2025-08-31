@@ -1,5 +1,5 @@
 # Informações do Projeto de Extensão
-`TÍTULO DO PROJETO`:  
+`TÍTULO DO PROJETO`:  Sistema de gestão de alunos
 
  `DISCIPLINA`: Fundamentos de Sistemas de Informação
 
@@ -10,8 +10,10 @@
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
+- Bruno Fernandes
+- Giovanni
+- Isabelly Layssa
+- Julia Luiza
 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
