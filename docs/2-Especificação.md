@@ -15,15 +15,21 @@ Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a>
 **Persona 2**
 
 Nome: Helena Martins
+
 Idade: 52 anos
+
 Profissão: Diretora Escolar
+
 Perfil: Helena tem ampla experiência na gestão escolar e precisa de uma visão global da instituição. Ela utiliza o sistema para acompanhar o desempenho de todas as turmas, supervisionar matrículas, verificar eventos planejados e analisar estatísticas de frequência e notas. Prefere sistemas que centralizem tudo em um só lugar, pois isso otimiza a tomada de decisão e reduz a necessidade de planilhas paralelas. Preza por segurança dos dados e relatórios consolidados para apresentar em reuniões pedagógicas e administrativas.
 
 Persona 3 
 
 Nome: Camila Ferreira
+
 Idade: 28 anos
+
 Profissão: Auxiliar de Secretaria Escolar
+
 Perfil: Camila é responsável por realizar matrículas, organizar documentos e cadastrar eventos no calendário escolar. Ela usa o sistema diariamente, por isso precisa de rapidez e confiabilidade. Valoriza ferramentas que permitam cadastrar alunos e turmas de forma simples, além de gerar listas de presença e relatórios administrativos. Também gosta quando o sistema envia notificações automáticas para alunos e responsáveis sobre matrículas e eventos, o que diminui a quantidade de ligações e atendimentos presenciais.
 
 ---
@@ -97,6 +103,7 @@ Os quadros abaixo devem ser preenchidos com os **requisitos funcionais e não fu
 > **Links Úteis**:
 > - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
 > - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+
 
 
 
