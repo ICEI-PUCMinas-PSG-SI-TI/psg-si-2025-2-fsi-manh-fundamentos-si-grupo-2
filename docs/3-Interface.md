@@ -17,28 +17,20 @@ Wireframes são protótipos simples que representam a estrutura e o layout bási
 ![Exemplo de Wireframe](images/wireframe-example.png)
 
 ## Wireframes por Tela
+Login 2 e tela principal
+![wireframe](image/wireframe1.jpg)
 
-### Tela 1 – Login
+Telas frequências e notas 
+![wireframe](image/wireframe2.jpg)
 
-- Descrição breve da tela e sua função  
-- Como atende aos requisitos (ex: segurança no login, usabilidade, etc.)  
-- (Imagem)
+Tela grade e tarefas
+![wireframe](image/wireframe3.jpg)
 
-### Tela 2 – Página Principal
+Tela matriculas
+![wireframe](image\wireframe4.jpg)
 
-- Descrição breve da tela e sua função  
-- Relação com requisitos funcionais (ex: exibe produtos, permite busca, etc.)  
-- (Imagem)
-
-### Tela 3 – Carrinho de Compras
-
-- Descrição breve da tela e sua função  
-- Considerações sobre usabilidade, feedback ao usuário, etc.  
-- (Imagem)
-
-### Tela 4 – [colocar o nome] 
-
-### Tela x – [colocar o nome] 
+Tela turmas, calendario, noticias, login 
+![wireframe](image/wireframe5.jpg)
 
 ...
 
