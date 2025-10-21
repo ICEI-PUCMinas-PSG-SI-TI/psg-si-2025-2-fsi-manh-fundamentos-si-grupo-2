@@ -1,0 +1,181 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo e fontes */
+body {
+  font-family: Arial, sans-serif; /* prioridade ao segundo CSS */
+  background-color: #f4f6fa;
+  color: #333;
+  margin: 0;
+}
+
+main, .main-content {
+  padding-top: 100px; /* compensa a altura do topo fixo */
+}
+
+/* Top Bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* altura definida no segundo CSS */
+  background: #002b5b; /* azul marinho escuro */
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.top-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 75px;
+  border-radius: 8px;
+}
+
+.school-name {
+  font-size: 1.6em;
+  font-weight: 700; /* negrito */
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Área do usuário */
+.user-area {
+  font-size: 1.1em;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 80px; /* abaixo do topo fixo */
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 80px);
+  background-color: #002855;
+  color: white;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #004080;
+  border-radius: 8px;
+}
+
+/* Scroll interno da sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 3px;
+}
+
+/* Conteúdo principal */
+.container {
+  display: flex;
+}
+
+.content {
+  margin-left: 240px;      /* espaço para sidebar */
+  padding: 120px 40px 40px 40px; /* espaço para top bar */
+  flex: 1;
+  min-height: calc(100vh - 120px); /* garante altura mínima visível */
+  overflow: auto;
+}
+
+/* Ajuste para as seções internas */
+.charts, .tarefas {
+  background: white;
+  padding: 80px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-height: 200px; /* garante altura mínima visível */
+}
+
+
+/* Página de login */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #001f3f;
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h1 {
+  color: #001f3f;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #001f3f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #003366;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}

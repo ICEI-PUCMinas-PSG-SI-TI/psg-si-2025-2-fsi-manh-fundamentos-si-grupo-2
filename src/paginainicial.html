@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Jardim Encantado</title>
+  <link rel="stylesheet" href="paginaincial.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard">
+<script src="paginainicial.js"></script>
+ <header class="top-bar">
+  <div class="top-content">
+    <div class="logo-area">
+      <img src="/docs/image/logoEscolaColoridosem.png" alt="Logo da Escola" class="logo-img">
+      <span class="school-name">Jardim Encantado</span>
+    </div>
+
+    <div class="user-area">
+      <span>Olá, <strong id="userName"></strong></span>
+    </div>
+  </div>
+</header>
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="portalsecretaria.html">Portal Secretaria</a></li>
+        <li><a href="frequencia.html">Frequência</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="turmas.html#">Turmas</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="calendario.html">Calendário</a></li>
+        <li><a href="grade.html">Grade</a></li>
+        <li><a href="tarefas.html">Tarefas</a></li>
+      </ul>
+    </nav>
+
+  <main class="content">
+    
+        <h2>Turmas</h2>
+
+  <section class="charts">
+    <h3>Média de Notas por Turma</h3>
+    <canvas id="chartNotas"></canvas>
+  </section>
+
+  <section class="charts">
+    <h3>Tarefas por Turma</h3>
+    <canvas id="chartTarefas"></canvas>
+  </section>
+
+  <section class="charts">
+    <h3>Faltas por Turma</h3>
+    <canvas id="chartFaltas"></canvas>
+  </section>
+ 
+  <section class="tarefas">
+    <h3>Próximas Tarefas (Próxima Semana)</h3>
+    <ul id="listaTarefas"></ul>
+  </section>
+    </main>
+  </div>
+  <script src="paginainicial.js"></script>
+</body>
+</html>
