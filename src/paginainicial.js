@@ -127,4 +127,16 @@ if (window.location.pathname.includes("dashboard.html")) {
 
   exibirTarefasProximas();
 }
+
 }
+
+
+window.onload = function() {
+  const email = sessionStorage.getItem('usuarioLogado');
+  if (!email) {
+    window.location.href = 'login.html';
+    return;
+  }
+  document.getElementById('userName').innerText = email;
+};
+
