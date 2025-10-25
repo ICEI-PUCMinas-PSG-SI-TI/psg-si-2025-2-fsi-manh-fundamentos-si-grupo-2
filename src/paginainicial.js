@@ -1,5 +1,3 @@
-
-
 // Validação de login
 const form = document.getElementById("loginForm");
 if (form) {
@@ -81,16 +79,8 @@ if (window.location.pathname.includes("dashboard.html")) {
       });
     }
   }
-//Tarefas//
-  if (window.location.pathname.includes("dashboard.html")) {
-  const user = JSON.parse(sessionStorage.getItem("usuarioLogado"));
-  if (!user) {
-    window.location.href = "index.html";
-  } else {
-    document.getElementById("userName").textContent = user.nome;
-  }
 
-  const chaveTarefas = `tarefas_${user.username}`;
+  // Tarefas
   const listaTarefas = document.getElementById("listaTarefas");
 
   function exibirTarefasProximas() {
@@ -128,9 +118,6 @@ if (window.location.pathname.includes("dashboard.html")) {
   exibirTarefasProximas();
 }
 
-}
-
-
 window.onload = function() {
   const email = sessionStorage.getItem('usuarioLogado');
   if (!email) {
@@ -139,4 +126,3 @@ window.onload = function() {
   }
   document.getElementById('userName').innerText = email;
 };
-
