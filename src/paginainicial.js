@@ -1,8 +1,4 @@
-// Simulação de usuários (você pode trocar por uma API depois)
-const usuarios = [
-  { username: "prof.julia", password: "12345", nome: "Prof. Julia" },
-  { username: "prof.mario", password: "abcde", nome: "Prof. Mário" }
-];
+
 
 // Validação de login
 const form = document.getElementById("loginForm");
@@ -85,54 +81,50 @@ if (window.location.pathname.includes("dashboard.html")) {
       });
     }
   }
+//Tarefas//
+  if (window.location.pathname.includes("dashboard.html")) {
+  const user = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+  if (!user) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("userName").textContent = user.nome;
+  }
 
-  // -------------------- SISTEMA DE TAREFAS --------------------
+  const chaveTarefas = `tarefas_${user.username}`;
   const listaTarefas = document.getElementById("listaTarefas");
-  const formTarefa = document.getElementById("formTarefa");
 
-  // Carregar tarefas do localStorage
-  let tarefas = JSON.parse(localStorage.getItem(chaveTarefas)) || [];
-
-  function exibirTarefas() {
+  function exibirTarefasProximas() {
     listaTarefas.innerHTML = "";
+
+    const tarefas = JSON.parse(localStorage.getItem(chaveTarefas)) || [];
     if (tarefas.length === 0) {
       listaTarefas.innerHTML = "<li>Nenhuma tarefa cadastrada.</li>";
       return;
     }
 
-    tarefas.forEach((t, index) => {
+    const hoje = new Date();
+    const umaSemanaDepois = new Date();
+    umaSemanaDepois.setDate(hoje.getDate() + 7);
+
+    const tarefasProximas = tarefas.filter(t => {
+      const dataTarefa = new Date(t.data);
+      return dataTarefa >= hoje && dataTarefa <= umaSemanaDepois;
+    });
+
+    if (tarefasProximas.length === 0) {
+      listaTarefas.innerHTML = "<li>Sem tarefas na próxima semana.</li>";
+      return;
+    }
+
+    tarefasProximas.sort((a, b) => new Date(a.data) - new Date(b.data));
+
+    tarefasProximas.forEach(t => {
       const li = document.createElement("li");
-      li.innerHTML = `
-        <span>${t.texto} - <small>${t.data}</small></span>
-        <button onclick="removerTarefa(${index})">Excluir</button>
-      `;
+      li.innerHTML = `${t.descricao || t.texto} - <small>${t.data}</small>`;
       listaTarefas.appendChild(li);
     });
   }
 
-  // Adicionar tarefa (se houver formulário na dashboard)
-  if (formTarefa) {
-    formTarefa.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const texto = document.getElementById("novaTarefa").value;
-      const data = document.getElementById("dataTarefa").value;
-
-      if (texto.trim() === "" || !data) return;
-
-      tarefas.push({ texto, data });
-      localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
-      formTarefa.reset();
-      exibirTarefas();
-    });
-  }
-
-  // Remover tarefa
-  window.removerTarefa = (index) => {
-    tarefas.splice(index, 1);
-    localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
-    exibirTarefas();
-  };
-
-  // Exibir ao carregar
-  exibirTarefas();
+  exibirTarefasProximas();
+}
 }
