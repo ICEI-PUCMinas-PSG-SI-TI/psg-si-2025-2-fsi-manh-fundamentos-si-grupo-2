@@ -1,4 +1,18 @@
-// Seletores
+let usuarioSalvo = sessionStorage.getItem("usuarioLogado");
+let usuario;
+
+try {
+  usuario = JSON.parse(usuarioSalvo);
+} catch {
+  usuario = { username: usuarioSalvo };
+}
+
+if (!usuario || !usuario.username) {
+  window.location.href = "login.html";
+}
+
+const chaveTarefas = `tarefas_${usuario.username}`;
+
 const addTaskBtn = document.getElementById("addTaskBtn");
 const modal = document.getElementById("modal");
 const salvarTarefa = document.getElementById("salvarTarefa");
@@ -8,22 +22,19 @@ const dataTarefa = document.getElementById("dataTarefa");
 const tarefasHoje = document.getElementById("tarefasHoje");
 const todasTarefas = document.getElementById("todasTarefas");
 
-// Pegar usuário logado
-const usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
-if (!usuario) {
-  window.location.href = "index.html";
-}
-const chaveTarefas = `tarefas_${usuario.username}`;
+let tarefaEditando = null; // Para controle de edição
 
-// Abrir modal
-addTaskBtn.onclick = () => (modal.style.display = "block");
-// Fechar modal
+addTaskBtn.onclick = () => {
+  modal.style.display = "block";
+  descricaoTarefa.value = "";
+  dataTarefa.value = "";
+  tarefaEditando = null;
+};
+
 cancelar.onclick = () => (modal.style.display = "none");
 
-// Carregar tarefas
 document.addEventListener("DOMContentLoaded", carregarTarefas);
 
-// Salvar tarefa
 salvarTarefa.onclick = () => {
   const descricao = descricaoTarefa.value.trim();
   const data = dataTarefa.value;
@@ -33,24 +44,28 @@ salvarTarefa.onclick = () => {
     return;
   }
 
-  const tarefa = {
-    id: Date.now(),
-    descricao,
-    data,
-    concluida: false,
-  };
-
   const tarefas = JSON.parse(localStorage.getItem(chaveTarefas)) || [];
-  tarefas.push(tarefa);
-  localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
 
-  descricaoTarefa.value = "";
-  dataTarefa.value = "";
+  if (tarefaEditando) {
+    // Editando tarefa existente
+    tarefaEditando.descricao = descricao;
+    tarefaEditando.data = data;
+  } else {
+    // Criando nova tarefa
+    const tarefa = {
+      id: Date.now(),
+      descricao,
+      data,
+      concluida: false,
+    };
+    tarefas.push(tarefa);
+  }
+
+  localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
   modal.style.display = "none";
   carregarTarefas();
 };
 
-// Função para carregar e exibir tarefas
 function carregarTarefas() {
   const tarefas = JSON.parse(localStorage.getItem(chaveTarefas)) || [];
   const hoje = new Date().toISOString().split("T")[0];
@@ -59,34 +74,61 @@ function carregarTarefas() {
   todasTarefas.innerHTML = "";
 
   tarefas.forEach(tarefa => {
+    // Criar elemento de tarefa
     const li = document.createElement("li");
     li.textContent = `${tarefa.descricao} (${tarefa.data})`;
-
-    // Verifica se passou da data
-    if (tarefa.data < hoje) {
-      tarefa.concluida = true;
-    }
 
     if (tarefa.concluida) {
       li.classList.add("concluida");
     }
 
-    // Clicar para marcar como concluída manualmente
-    li.addEventListener("click", () => {
+    // Botão de concluir
+    const doneBtn = document.createElement("button");
+    doneBtn.textContent = "✔";
+    doneBtn.classList.add("doneBtn");
+    doneBtn.onclick = () => {
       tarefa.concluida = !tarefa.concluida;
       localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
       carregarTarefas();
-    });
+    };
+
+    // Botão de editar
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "✎";
+    editBtn.classList.add("editBtn");
+    editBtn.onclick = () => {
+      tarefaEditando = tarefa;
+      descricaoTarefa.value = tarefa.descricao;
+      dataTarefa.value = tarefa.data;
+      modal.style.display = "block";
+    };
+
+    li.appendChild(editBtn);
+    li.appendChild(doneBtn);
 
     todasTarefas.appendChild(li);
 
-    // Mostra as de hoje
     if (tarefa.data === hoje) {
       const liHoje = li.cloneNode(true);
+      // Precisa adicionar eventos novamente para o clone
+      const editBtnClone = liHoje.querySelector(".editBtn");
+      const doneBtnClone = liHoje.querySelector(".doneBtn");
+
+      editBtnClone.onclick = () => {
+        tarefaEditando = tarefa;
+        descricaoTarefa.value = tarefa.descricao;
+        dataTarefa.value = tarefa.data;
+        modal.style.display = "block";
+      };
+      doneBtnClone.onclick = () => {
+        tarefa.concluida = !tarefa.concluida;
+        localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
+        carregarTarefas();
+      };
+
       tarefasHoje.appendChild(liHoje);
     }
   });
 
-  // Atualiza o localStorage (caso alguma tarefa tenha vencido)
   localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
 }
