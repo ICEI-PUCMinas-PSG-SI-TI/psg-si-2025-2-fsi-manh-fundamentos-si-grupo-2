@@ -11,13 +11,23 @@
 
 | Categoria             | Tecnologia/Ferramenta | Justificativa de uso |
 |-----------------------|------------------------|----------------------|
-| Linguagem             | JavaScript             | Implementação das funcionalidades do front-end. |
-| Framework Front-end   | React.js               | Criação de interfaces dinâmicas e reutilizáveis. |
-| Banco de Dados        | MySQL                  | Armazenamento e gerenciamento de dados. |
-| Ferramenta de Design  | Figma                  | Criação de protótipos e wireframes. |
-| IDE                   | VS Code                | Ambiente principal de desenvolvimento. |
 
----
+
+HTML5 (HyperText Markup Language)
+Utilizado para estruturar o conteúdo das páginas. O HTML5 oferece semântica aprimorada, permitindo uma melhor organização das seções (como cabeçalho, corpo e rodapé) e maior acessibilidade para os usuários e mecanismos de busca.
+
+CSS3 (Cascading Style Sheets)
+Responsável pela estilização e layout do site. O CSS3 possibilita criar uma interface visual agradável, com cores, fontes e espaçamentos padronizados, além de permitir responsividade para diferentes tamanhos de tela (computadores, tablets e celulares).
+
+JavaScript (ES6+)
+Aplicado para adicionar interatividade ao site, como menus dinâmicos, validação de formulários e exibição de mensagens ou animações. O JavaScript permite melhorar a experiência do usuário sem necessidade de recarregar as páginas.
+
+Bootstrap
+Utilizado para agilizar o desenvolvimento da interface e garantir um design moderno e responsivo. O Bootstrap oferece uma ampla coleção de componentes pré-estilizados (como botões, menus e formulários), além de um sistema de grid que facilita a adaptação do layout a diferentes tamanhos de tela. Essa ferramenta reduz o tempo de desenvolvimento e assegura uma aparência uniforme em todo o site.
+
+GitHub
+Empregado para o controle de versão e armazenamento do código-fonte do projeto. O GitHub permite registrar o histórico de alterações, facilitar o trabalho colaborativo entre desenvolvedores e garantir a segurança e o backup do código. Além disso, a plataforma oferece recursos de hospedagem, como o GitHub Pages, que possibilita publicar o site de forma gratuita e acessível diretamente pela web.
+
 
 ## 5.2 Acompanhamento das Interfaces do Sistema
 
@@ -28,9 +38,17 @@
 
 | Requisito/Tela                | Status | Última atualização | Próxima entrega |
 |--------------------------------|--------|--------------------|-----------------|
-| Tela principal                 | 🟢 Concluída     | 10/08/2025         | -               |
-| Tela de login                  | 🟡 Em andamento | 09/08/2025         | 15/08/2025      |
-| Tela de cadastro de produto    | 🔴 Não iniciada | -                  | 20/08/2025      |
+| Tela principal                   🟡 Em andamento       30/11/2025 
+  Login Usuário                    🟢 Concluído          29/11/2025
+  Login Secretaría                 🟢 Concluído          03/11/2025
+  Página da Secretaría             🟡 Em andamento       04/11/2025
+  Página de notas                  🟡 Em andamento       04/11/2025
+  Caléndário                       🟡 Em andamento       30/11/2025
+  Turmas                           🟡 Em andamento       30/11/2025
+
+                    
+
+
 
 Legenda: 🟢 Concluído | 🟡 Em andamento | 🔴 Não iniciado
 
