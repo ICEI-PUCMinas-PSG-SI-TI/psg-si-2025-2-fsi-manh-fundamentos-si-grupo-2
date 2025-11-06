@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarefas</title>
+  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="tarefa.css" />
+</head>
+<body>
+   <div class="sidebar">
+    <div class="text-center mb-4">
+      <img src="/docs/image/logoEscolaColoridosem.png" alt="Logo Escola" class="logo">
+      <h6>Jardim Encantado</h6>
+    </div>
+    <a href="paginainicial.html">Página Inicial</a>
+    <a href="portal_secretaria.html">Portal Secretaria</a>
+    <a href="frequencia.html">Frequência</a>
+    <a href="notas.html">Notas</a>
+    <a href="turmas.html">Turmas</a>
+    <a href="noticias.html">Notícias</a>
+    <a href="calendario.html">Calendário</a>
+    <a href="grade.html">Grade</a>
+    <a href="tarefas.html"class="fw-bold">Tarefas</a>
+  </div>
+
+
+
+
+  <div class="container">
+    <h1>Tarefas da Professora</h1>
+    <button id="addTaskBtn">+ Adicionar Tarefa</button>
+
+    <div class="section">
+      <h2>Tarefas de Hoje</h2>
+      <ul id="tarefasHoje"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Todas as Tarefas</h2>
+      <ul id="todasTarefas"></ul>
+    </div>
+  </div>
+
+  <!-- Modal para adicionar tarefa -->
+  <div id="modal">
+    <div class="modal-content">
+      <h2>Adicionar / Editar Tarefa</h2>
+      <label>Descrição:</label>
+      <input type="text" id="descricaoTarefa" placeholder="Digite a tarefa..." />
+      
+      <label>Data:</label>
+      <input type="date" id="dataTarefa" />
+
+      <button id="salvarTarefa">Salvar</button>
+      <button id="cancelar">Cancelar</button>
+    </div>
+  </div>
+
+
+  <script src="tarefas.js" defer></script>
+</body>
+</html>

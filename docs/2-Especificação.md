@@ -7,34 +7,17 @@ Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a>
 ## 2.1 Personas
 
 **Persona 1**  
+**Nome:** Mariana Souza  
+**Idade:** 32 anos  
+**Profissão:** Analista de Marketing  
+**Perfil:** Mariana é casada, tem uma rotina corrida e adora praticidade. Costuma fazer compras online para economizar tempo, principalmente de roupas e produtos eletrônicos. Dá muita importância a avaliações de outros clientes antes de finalizar uma compra e prefere lojas que oferecem frete rápido e políticas de devolução facilitadas. Atualmente, está buscando um site confiável para comprar um novo smartphone com um bom custo-benefício.
 
-**Nome:** Ricardo Almeida
+**Persona 2**  
+*(Preencha com a descrição detalhada da segunda persona do seu projeto)*
 
-**Idade:** 41 anos  
+**Persona 3**  
+*(Preencha com a descrição detalhada da segunda persona do seu projeto)*
 
-**Profissão:** Professor 
-
-**Perfil:** Ricardo é dedicado e gosta de tecnologia aplicada ao ensino, mas não tem muito tempo para aprender sistemas complicados. Ele precisa de praticidade para lançar notas e faltas rapidamente, além de criar suas turmas no início do semestre. Dá importância a relatórios claros que mostrem o desempenho da turma e a frequência dos alunos, pois isso facilita reuniões com pais e responsáveis. Para ele, o ideal é que o sistema seja simples, direto e funcione bem tanto no computador da escola quanto em casa.
-
-**Persona 2**
-
-Nome: Helena Martins
-
-Idade: 52 anos
-
-Profissão: Diretora Escolar
-
-Perfil: Helena tem ampla experiência na gestão escolar e precisa de uma visão global da instituição. Ela utiliza o sistema para acompanhar o desempenho de todas as turmas, supervisionar matrículas, verificar eventos planejados e analisar estatísticas de frequência e notas. Prefere sistemas que centralizem tudo em um só lugar, pois isso otimiza a tomada de decisão e reduz a necessidade de planilhas paralelas. Preza por segurança dos dados e relatórios consolidados para apresentar em reuniões pedagógicas e administrativas.
-
-Persona 3 
-
-Nome: Camila Ferreira
-
-Idade: 28 anos
-
-Profissão: Auxiliar de Secretaria Escolar
-
-Perfil: Camila é responsável por realizar matrículas, organizar documentos e cadastrar eventos no calendário escolar. Ela usa o sistema diariamente, por isso precisa de rapidez e confiabilidade. Valoriza ferramentas que permitam cadastrar alunos e turmas de forma simples, além de gerar listas de presença e relatórios administrativos. Também gosta quando o sistema envia notificações automáticas para alunos e responsáveis sobre matrículas e eventos, o que diminui a quantidade de ligações e atendimentos presenciais.
 
 ---
 #### ⚠️ **ATENÇÃO**
@@ -56,12 +39,16 @@ Os quadros abaixo devem ser preenchidos com os **requisitos funcionais e não fu
 
 |ID    | Descrição do Requisito                                                                                            | Prioridade |
 |------|-------------------------------------------------------------------------------------------------------------------|------------|
-|RF-01| O sistema deve permitir cadastrar de alunos, contendo dados pessoais como número da matricula e nome completo     | ALTA       | 
-|RF-02| O sistema deve permitir que os usuários criem turmas  com os alunos das mesmas e  horarios de aula                | ALTA       |
-|RF-03| O sistema deve conter página com frequencia dos alunos, refletidindo em um gráfico de coluna                      | ALTA       |
-|RF-04| O sistema deve conter página com notas dos alunos, refletindo em um grafico de colunas                            | ALTA       |
-|RF-05| O sistema deve permitir a criação e alteração de um calendário escolar com datas de eventos e provas              | MÉDIA      |
-
+|RF-01| O sistema deve permitir que os usuários criem uma conta informando nome, e-mail, senha e endereço.                | ALTA       | 
+|RF-02| O sistema deve permitir que os usuários adicionem produtos ao carrinho de compras.                                | MÉDIA      |
+|RF-03| *(Descreva aqui o requisito funcional 3 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-04| *(Descreva aqui o requisito funcional 4 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-05| *(Descreva aqui o requisito funcional 5 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-06| *(Descreva aqui o requisito funcional 6 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-07| *(Descreva aqui o requisito funcional 7 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-08| *(Descreva aqui o requisito funcional 8 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-09| *(Descreva aqui o requisito funcional 9 do seu sistema)*                                                        | *(Alta/Média/Baixa)*  |
+|RF-10| *(Descreva aqui o requisito funcional 10 do seu sistema)*                                                       | *(Alta/Média/Baixa)*  |
 
 ### 2.3 REQUISITOS NÃO FUNCIONAIS
 
@@ -71,11 +58,11 @@ Os quadros abaixo devem ser preenchidos com os **requisitos funcionais e não fu
 |ID     | Descrição do Requisito                                                                              |Prioridade |
 |-------|-----------------------------------------------------------------------------------------------------|-----------|
 |RNF-01| O sistema deve carregar as páginas em até 3 segundos para garantir uma boa experiência ao usuário.  | MÉDIA     | 
-|RNF-02| O sistema deve otimizar imagens e vídeos para não comprometer a navegação.                          | MÉDIA     | 
-|RNF-03| O sistema deve ter nterface simples, intuitiva e amigável, com navegação fácil.                     | ALTA      |
-|RNF-04| O sistema deve ter contraste adequado entre cores de fundo e texto.                                 | MÈDIA     |
-|RNF-05| O sistema de ve ter código estruturado para facilitar futuras atualizações                          | ALTO      |
-
+|RNF-02| O sistema deve proteger as informações dos clientes por meio de criptografia e medidas de segurança.| ALTA      | 
+|RNF-03| *(Descreva aqui o requisito não funcional 3 do seu sistema)*                                       | *(Alta/Média/Baixa)*  |
+|RNF-04| *(Descreva aqui o requisito não funcional 4 do seu sistema)*                                       | *(Alta/Média/Baixa)*  |
+|RNF-05| *(Descreva aqui o requisito não funcional 5 do seu sistema)*                                       | *(Alta/Média/Baixa)*  |
+|RNF-06| *(Descreva aqui o requisito não funcional 6 do seu sistema)*                                       | *(Alta/Média/Baixa)*  |
 
 ---
 
@@ -88,8 +75,13 @@ Os quadros abaixo devem ser preenchidos com os **requisitos funcionais e não fu
 | ID  | Restrição                                                        |
 |------|-----------------------------------------------------------------|
 | 01   | O projeto deverá ser entregue até o final do semestre.          |
-| 02   | O sistema deve funcionar apenas dentro da rede interna da escola.  |
-
+| 02   | O sistema deve funcionar apenas dentro da rede interna da empresa.  |
+| 03   | *(Descreva aqui a restrição 4 do seu projeto)*
+| 04   | *(Descreva aqui a restrição 4 do seu projeto)*                  |
+| 05   | *(Descreva aqui a restrição 5 do seu projeto)*                  |
+| 06   | *(Descreva aqui a restrição 6 do seu projeto)*                  |
+| 07   | *(Descreva aqui a restrição 7 do seu projeto)*                  |
+| 08   | *(Descreva aqui a restrição 8 do seu projeto)*                  |
 
 
 
@@ -98,9 +90,6 @@ Os quadros abaixo devem ser preenchidos com os **requisitos funcionais e não fu
 > **Links Úteis**:
 > - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
 > - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
-
-
 
 
 

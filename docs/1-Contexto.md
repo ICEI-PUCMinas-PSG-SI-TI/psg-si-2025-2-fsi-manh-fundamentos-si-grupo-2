@@ -2,9 +2,9 @@
 
 ## 1.1 Introdução
 
-Este projeto de extensão tem como objetivo aplicar conhecimentos de Sistemas de Informação no desenvolvimento de uma solução digital para uma pequena empresa/parceiro local, com base em suas necessidades reais. Visa proporcionar aos alunos uma experiência prática com levantamento de requisitos, prototipação e desenvolvimento ágil, ao mesmo tempo em que gera impacto positivo para a comunidade atendida.
+Este projeto de extensão tem como objetivo aplicar conhecimentos de Sistemas de Informação no desenvolvimento de uma solução digital para uma pequena empresa/parceiro local, com base em suas necessidades reais. A iniciativa visa proporcionar aos alunos uma experiência prática com levantamento de requisitos, prototipação e desenvolvimento ágil, ao mesmo tempo em que gera impacto positivo para a comunidade atendida.
 
-A proposta será apresentada com base na metodologia Ágil Scrum, incentivando a colaboração, a adaptação contínua e a entrega incremental de valor ao longo do desenvolvimento.
+A proposta será conduzida com base na metodologia ágil Scrum, incentivando a colaboração, a adaptação contínua e a entrega incremental de valor ao longo do desenvolvimento.
 
 ---
 
@@ -30,52 +30,52 @@ _(Caso os alunos identifiquem a necessidade de incluir novas perguntas, podem fa
 
 ### 1. Sobre o Entrevistado
 
-**Nome:**  Carla Rosana
-**Cargo/função:**  Diretora e Professora
-**Tempo na empresa:**  4 anos
+**Nome:**  
+**Cargo/função:**  
+**Tempo na empresa:**  
 
 ---
 
 ### 2. Sobre a Empresa
 
 **Qual o principal produto ou serviço prestado?**  
-_Resposta:_  O principal serviço prestado é a educação infantil, com foco no cuidado, acolhimento e desenvolvimento das crianças.
+_Resposta:_  
 
 **Quantos funcionários atuam atualmente?**  
-_Resposta:_  Cinco funcionários: quatro professoras, sendo que duas delas acumulam também a função de diretora, responsáveis tanto pelo trabalho pedagógico quanto pela gestão da instituição, e uma faxineira, encarregada da limpeza e da manutenção da higiene dos ambientes.
+_Resposta:_  
 
 **Há algum sistema utilizado para controle interno? Qual?**  
-_Resposta:_  O controle interno é realizado por meio de registros manuais em cadernos, não havendo a utilização de sistema digital.
+_Resposta:_  
 
 ---
 
 ### 3. Processos Atuais
 
 **Como é feito o controle de processos (ex: estoque, vendas, agendamento)?**  
-_Resposta:_  O controle é realizado de forma manual, por meio de livros de débito e crédito, cadernos de anotações e registros individuais de cada turma. Também são utilizados cadernos específicos para planejamento anual, atas de reuniões e controle de matrículas.
+_Resposta:_  
 
 **Quais ferramentas são utilizadas atualmente? (papel, planilhas, sistemas...)**  
-_Resposta:_  Papel, cadernos, planilhas a mão e telefone fixo.
+_Resposta:_  
 
 ---
 
 ### 4. Dores e Dificuldades
 
 **Quais tarefas consomem mais tempo ou causam retrabalho?**  
-_Resposta:_   As tarefas que mais demandam tempo são a elaboração de avaliações, o planejamento anual, o lançamento de notas e faltas, bem como a emissão de boletins mensais e os relatórios de avaliação dos alunos.
+_Resposta:_  
 
 **Há ocorrência de erros ou desperdícios? Em quais situações?**  
-_Resposta:_  Sim, principalmente em situações como esquecimento de registrar pagamentos, erros ao anotar faltas e notas, falhas no controle de créditos e dificuldades no acompanhamento geral dos registros manuais.  
+_Resposta:_  
 
 ---
 
 ### 5. Expectativas
 
 **Que tipo de solução poderia facilitar o seu dia a dia?**  
-_Resposta:_  A implantação de um sistema informatizado que centralize e automatize os processos, reduzindo o tempo gasto e diminuindo falhas. 
+_Resposta:_  
 
 **Já foi feita alguma tentativa anterior de resolver esse problema?**  
-_Resposta:_  Até o momento não houve tentativa de adoção de sistema próprio; em algumas situações, contou-se apenas com o apoio de um contador, porém não foi possível manter o serviço devido ao alto custo.
+_Resposta:_  
 
 ---
 
@@ -93,18 +93,6 @@ _Após a realização da entrevista, as informações serão analisadas para ide
 ---
 ## _✏️Coloque aqui o SEU TEXTO_ 
 
-Sistema de gestão de alunos para escola de bairro, voltado para o gestor do local em questão para controle de alunos e turmas. O sistema permitirá : 
-
-	•	Cadastro de alunos (dados pessoais, documentos, histórico escolar).
-	•	Cadastro de turmas e séries (com associação de alunos e professores).
-	•	Controle de matrículas e rematrículas.
-	•	Lançamento de notas e boletins digitais.
-	•	Controle de frequência (chamada digital).
-	•	Calendário escolar (provas, reuniões, eventos).
-	•	Geração de relatórios (desempenho por aluno, turma, disciplina).
-
- O objetivo é dinamizar à gestão da escola e trazer uma plataforma para controle que seja pratica e eficiente. 
- A expectativa é melhorar a organização, facilitar a visualização de informações para tomada de decisões em casos de trocas de turma, novos alunos e saidas, por exemplo.
 
 ---
   

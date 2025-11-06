@@ -1,0 +1,227 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #f4f6fa;
+  color: #333;
+  margin: 0;
+}
+
+main, .main-content {
+  padding-top: 100px; 
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; 
+  background: #002b5b; 
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.top-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 75px;
+  border-radius: 8px;
+}
+
+.school-name {
+  font-size: 1.6em;
+  font-weight: 700; 
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.user-area {
+  font-size: 1.1em;
+}
+
+.sidebar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 80px);
+  background-color: #002855;
+  color: white;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #004080;
+  border-radius: 8px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 3px;
+}
+
+.container {
+  display: flex;
+}
+
+.content {
+  margin-left: 240px;     
+  padding: 120px 40px 40px 40px; 
+  flex: 1;
+  min-height: calc(100vh - 120px); 
+  overflow: auto;
+}
+
+.charts, .tarefas {
+  background: white;
+  padding: 80px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-height: 200px; 
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #001f3f;
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h1 {
+  color: #001f3f;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #001f3f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #003366;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+  .mini-mural {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .mini-mural h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .mural-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .mural-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 15px;
+      border-radius: 10px;
+      color: white;
+      width: 100px;
+      height: 100px;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .mural-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+
+    .bg1 { background-color: #0d6efd; }
+    .bg2 { background-color: #198754; }
+    .bg3 { background-color: #ffc107; color: #333; }
+    .bg4 { background-color: #dc3545; }
+    .bg5 { background-color: #6f42c1; }
+    .bg6 { background-color: #fd7e14; }
+
+    .mural-item i {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }

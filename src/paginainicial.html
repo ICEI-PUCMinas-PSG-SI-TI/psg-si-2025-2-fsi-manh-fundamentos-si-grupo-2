@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Jardim Encantado</title>
+  <link rel="stylesheet" href="paginaincial.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="dashboard">
+<script src="paginainicial.js"></script>
+ <header class="top-bar">
+  <div class="top-content">
+    <div class="logo-area">
+      <img src="/docs/image/logoEscolaColoridosem.png" alt="Logo da Escola" class="logo-img">
+      <span class="school-name">Jardim Encantado</span>
+    </div>
+
+    <div class="user-area">
+      <span>Olá, <strong id="userName"></strong></span>
+    </div>
+  </div>
+</header>
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="paginainicial.html"class="fw-bold">Página Inicial</a></li>
+        <li><a href="portal_secretaria.html">Portal Secretaria</a></li>
+        <li><a href="frequencia.html">Frequência</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="turmas.html#">Turmas</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="calendario.html">Calendário</a></li>
+        <li><a href="grade.html">Grade</a></li>
+        <li><a href="tarefas.html">Tarefas</a></li>
+      </ul>
+    </nav>
+
+  <main class="content">
+    
+        <section class="mini-mural">
+    <h2>Mural da Escola</h2>
+    <div class="mural-grid">
+      <div class="mural-item bg1">
+        <i class="bi bi-person-circle"></i>
+        <span>Aluno</span>
+      </div>
+      <div class="mural-item bg2">
+        <i class="bi bi-person-badge"></i>
+        <span>Professor</span>
+      </div>
+      <div class="mural-item bg3">
+        <i class="bi bi-laptop"></i>
+        <span>Tecnologia</span>
+      </div>
+      <div class="mural-item bg4">
+        <i class="bi bi-book"></i>
+        <span>Estudos</span>
+      </div>
+      <div class="mural-item bg5">
+        <i class="bi bi-journal"></i>
+        <span>Projetos</span>
+      </div>
+      <div class="mural-item bg6">
+        <i class="bi bi-pencil-square"></i>
+        <span>Atividades</span>
+      </div>
+    </div>
+  </section>
+    <h2>Bem vindo ao Jardim Encantado<br></h2>
+ <section class="mensagem-boas-vindas">
+  
+    <p> <br>
+      Bem-vindos à nossa escola! Aqui aprendemos, crescemos e nos divertimos juntos. Cada dia é uma oportunidade de descobrir, compartilhar e construir momentos felizes. Nossa comunidade é feita de respeito, amizade e aprendizado contínuo.</p>
+  <section class="tarefas">
+    <h3>Próximas Tarefas (Próxima Semana)</h3>
+    <ul id="listaTarefas"></ul>
+  </section>
+    </main>
+  </div>
+  <script src="paginainicial.js"></script>
+</body>
+</html>
