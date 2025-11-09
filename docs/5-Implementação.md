@@ -38,13 +38,13 @@ Empregado para o controle de versão e armazenamento do código-fonte do projeto
 
 | Requisito/Tela                | Status | Última atualização | Próxima entrega |
 |--------------------------------|--------|--------------------|-----------------|
-| Tela principal                   🟡 Em andamento       30/11/2025 
+| Tela principal                   🟢 Concluído          09/11/2025 
   Login Usuário                    🟢 Concluído          29/11/2025
   Login Secretaría                 🟢 Concluído          03/11/2025
   Página da Secretaría             🟡 Em andamento       04/11/2025
   Página de notas                  🟡 Em andamento       04/11/2025
   Caléndário                       🟡 Em andamento       30/11/2025
-  Turmas                           🟡 Em andamento       30/11/2025
+  Turmas                           🟢 Concluído          09/11/2025
 
                     
 
