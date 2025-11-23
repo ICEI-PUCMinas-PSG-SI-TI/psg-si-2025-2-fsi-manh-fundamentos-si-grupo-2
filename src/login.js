@@ -23,7 +23,8 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   }
 
   // Salva login na sessionStorage
-  sessionStorage.setItem('usuarioLogado', email);
+  sessionStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+
   mensagem.innerText = 'Login realizado com sucesso! Redirecionando...';
 
   setTimeout(() => {

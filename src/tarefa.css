@@ -115,112 +115,32 @@ h1 {
 }
 
 /* ====== SEÇÕES DE TAREFAS ====== */
-.section {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 25px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+.tarefa-hoje {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 10px;
 }
 
-.section h2 {
-  color: #004080;
-  border-bottom: 2px solid #004080;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+.concluida {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.conteudo {
+    margin-left: 260px; /* ou o tamanho exato do seu menu */
+}
+.tarefa-hoje {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 10px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.concluida {
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
-ul li {
-  background-color: #e9f1ff;
-  margin-bottom: 10px;
-  padding: 12px 15px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.2s ease, background 0.3s ease;
-}
-
-ul li:hover {
-  transform: scale(1.01);
-  background-color: #d6e6ff;
-}
-
-ul li button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  color: #004080;
-  transition: color 0.3s;
-  margin-left: 8px;
-}
-
-ul li button:hover {
-  color: #cc0000;
-}
-
-/* ====== MODAL ====== */
-
-.modal-content {
-  align-items: center;
-  background-color: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 350px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-.modal-content h3 {
-  color: #002b5c;
-  margin-bottom: 15px;
-}
-
-.modal-content label {
-  display: block;
-  text-align: left;
-  margin-top: 10px;
-  color: #004080;
-  font-weight: 500;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-#salvarTarefa, #cancelar {
-  margin-top: 15px;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-#salvarTarefa {
-  background-color: #004080;
-  color: white;
-}
-
-#salvarTarefa:hover {
-  background-color: #0066cc;
-}
-
-#cancelar {
-  background-color: #ccc;
-}
-
-#cancelar:hover {
-  background-color: #bbb;
+/* Botões mais modernos */
+.btn-sm {
+    padding: 4px 10px;
+    font-size: 14px;
 }
