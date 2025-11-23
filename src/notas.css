@@ -1,0 +1,33 @@
+/* Styles for notas page — consistent with frequencia but tuned for grades view */
+
+:root{ --bg:#f4f7fb; --card:#fff; --accent:#0d6efd; --muted:#6b7280; --shadow:0 6px 18px rgba(13,40,80,0.06); }
+
+.content{ background:var(--bg) }
+.notes-header h2{ font-size:1.6rem; margin-bottom:6px }
+.notes-header p{ color:var(--muted) }
+
+.attendance-controls{ display:flex; align-items:center; gap:12px; padding:12px; background:var(--card); border-radius:12px; box-shadow:var(--shadow); }
+
+.notes-main{ display:flex; gap:18px; align-items:flex-start; margin-top:12px }
+.left-col{ flex:1 }
+.right-col{ width:420px }
+
+.grades-table-wrap{ background:var(--card); padding:12px; border-radius:12px; box-shadow:var(--shadow); overflow:auto }
+#gradesTable{ width:100%; border-collapse:collapse; min-width:700px }
+#gradesTable th, #gradesTable td{ padding:10px 12px; border-bottom:1px solid #f1f5f9; text-align:center }
+#gradesTable thead th{ position:sticky; top:0; background:linear-gradient(180deg,#fff,#fbfdff); z-index:3 }
+#gradesTable tr:nth-child(even) td{ background:#fbfcfe }
+#gradesTable td:first-child{ text-align:left; font-weight:600 }
+
+.card{ background:var(--card); padding:14px; border-radius:12px; box-shadow:var(--shadow) }
+
+.tasks-card h4{ margin:0 0 8px 0 }
+.task-form{ display:flex; gap:8px; align-items:center }
+.task-form input{ padding:8px 10px; border-radius:8px; border:1px solid #e6eefc }
+.task-form button{ padding:8px 12px; border-radius:8px; background:var(--accent); color:white; border:none }
+#taskList{ list-style:none; margin-top:10px; padding:0 }
+#taskList li{ padding:8px; border-radius:8px; border:1px solid #eef2ff; margin-bottom:8px; display:flex; justify-content:space-between }
+
+.charts{ padding:12px }
+
+@media (max-width:1000px){ .notes-main{ flex-direction:column } .right-col{ width:100% } #gradesTable{ min-width:100% } }

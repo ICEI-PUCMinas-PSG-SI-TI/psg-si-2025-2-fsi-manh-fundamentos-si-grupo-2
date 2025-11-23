@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas - Jardim Encantado</title>
+  <link rel="stylesheet" href="paginaincial.css">
+  <link rel="stylesheet" href="notas.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard">
+  <script src="paginainicial.js"></script>
+  <header class="top-bar">
+    <div class="top-content">
+      <div class="logo-area">
+        <img src="/docs/image/logoEscolaColoridosem.png" alt="Logo da Escola" class="logo-img">
+        <span class="school-name">Jardim Encantado</span>
+      </div>
+
+      <div class="user-area">
+        <span>Olá, <strong id="userName">Secretaria</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="paginainicial.html">Página Inicial</a></li>
+      <li><a href="portal_secretaria.html">Portal Secretaria</a></li>
+      <li><a href="frequencia.html">Frequência</a></li>
+      <li><a class="fw-bold" href="notas.html">Notas</a></li>
+      <li><a href="turmas.html">Turmas</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="calendario.html">Calendário</a></li>
+      <li><a href="grade.html">Grade</a></li>
+      <li><a href="tarefas.html">Tarefas</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="notes-header">
+      <h2>Gestão de Notas</h2>
+      <p>Adicione avaliações, lance notas por aluno e visualize distribuições por turma e aluno.</p>
+    </section>
+
+    <section class="notes-controls attendance-controls">
+      <label>Turma:
+        <select id="filterTurmaNotas">
+          <option value="all">Todas</option>
+        </select>
+      </label>
+
+      <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
+        <input id="newAssignmentName" placeholder="Nova avaliação (ex: Prova 1)" style="padding:6px 10px; border-radius:8px; border:1px solid #e6eefc">
+        <button id="btnAddAssignment">Adicionar Avaliação</button>
+        <button id="btnExportNotas">Exportar CSV</button>
+      </div>
+    </section>
+
+    <section class="notes-main attendance-main">
+      <div class="left-col">
+        <div class="grades-table-wrap">
+          <table id="gradesTable"></table>
+        </div>
+
+        <div class="tasks-card card">
+          <h4>Tarefas</h4>
+          <div class="task-form">
+            <input id="taskTitle" placeholder="Título da tarefa" />
+            <input id="taskDue" type="date" />
+            <button id="btnAddTask">Adicionar Tarefa</button>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="card charts">
+          <h3>Distribuição por Turma</h3>
+          <canvas id="turmaPie" style="max-height:260px"></canvas>
+        </div>
+
+        <div class="card charts" style="margin-top:16px">
+          <h3>Distribuição do Aluno (selecionar linha)</h3>
+          <canvas id="studentPie" style="max-height:260px"></canvas>
+          <div id="selectedStudentName" style="margin-top:8px; color:#374151"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="notas.js"></script>
+</body>
+</html>
