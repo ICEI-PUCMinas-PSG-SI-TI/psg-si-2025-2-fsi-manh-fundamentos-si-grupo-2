@@ -4,7 +4,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   const senha = document.getElementById('loginSenha').value.trim();
   const mensagem = document.getElementById('mensagem');
 
-  // Recupera usuário do localStorage
   const usuario = JSON.parse(localStorage.getItem('usuario'));
 
   if (!usuario) {
@@ -22,7 +21,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     return;
   }
 
-  // Salva login na sessionStorage
   sessionStorage.setItem('usuarioLogado', JSON.stringify(usuario));
 
   mensagem.innerText = 'Login realizado com sucesso! Redirecionando...';

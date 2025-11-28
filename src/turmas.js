@@ -1,4 +1,4 @@
-/* --------------- CONFIGURAÇÃO INICIAL --------------- */
+
 const professoraLogada = sessionStorage.getItem("usuarioLogado");
 if (!professoraLogada) {
   alert("Você precisa estar logada para acessar as turmas.");
@@ -6,7 +6,7 @@ if (!professoraLogada) {
 }
 document.getElementById("nomeProfessora").textContent = professoraLogada;
 
-/* SELECTORS */
+
 const containerTurmas = document.getElementById("containerTurmas");
 const tabelaBody = document.querySelector("#tabelaTurmas tbody");
 const btnNovaTurma = document.getElementById("btnNovaTurma");
@@ -20,14 +20,14 @@ const adicionarAluno = document.getElementById("adicionarAluno");
 const fecharAlunos = document.getElementById("fecharAlunos");
 const modalTurmaTitulo = document.getElementById("modalTurmaTitulo");
 
-/* DADOS */
+
 let turmas = JSON.parse(localStorage.getItem(`turmas_${professoraLogada}`)) || [];
 
-/* Estado para edição */
-let turmaAtual = null;           // índice da turma aberta no modal de alunos
-let turmaEditandoIndex = null;   // índice da turma que está sendo editada (modal de turma)
 
-/* ---------- RENDERIZAÇÃO ---------- */
+let turmaAtual = null;           
+let turmaEditandoIndex = null;   
+
+
 function renderizarCards() {
   containerTurmas.innerHTML = "";
   turmas.forEach((turma, index) => {
@@ -84,12 +84,11 @@ function atualizarTela() {
 }
 atualizarTela();
 
-/* ---------- UTILS ---------- */
 function salvarLocal() {
   localStorage.setItem(`turmas_${professoraLogada}`, JSON.stringify(turmas));
 }
 
-/* ---------- CRUD TURMA (create/update/delete) ---------- */
+
 btnNovaTurma.onclick = () => {
   turmaEditandoIndex = null;
   modalTurmaTitulo.textContent = "Nova Turma";
@@ -114,10 +113,10 @@ salvarTurma.onclick = () => {
   }
 
   if (turmaEditandoIndex === null) {
-    // criar
+  
     turmas.push({ disciplina, nome, periodo, alunos: [] });
   } else {
-    // atualizar
+   
     turmas[turmaEditandoIndex].disciplina = disciplina;
     turmas[turmaEditandoIndex].nome = nome;
     turmas[turmaEditandoIndex].periodo = periodo;
@@ -128,7 +127,7 @@ salvarTurma.onclick = () => {
   atualizarTela();
 };
 
-/* editar turma (abre modal com dados carregados) */
+
 function editarTurma(index) {
   turmaEditandoIndex = index;
   const t = turmas[index];
@@ -139,7 +138,7 @@ function editarTurma(index) {
   modalTurma.style.display = "block";
 }
 
-/* remover turma */
+
 function removerTurma(index) {
   if (!confirm("Deseja remover esta turma?")) return;
   turmas.splice(index, 1);
@@ -147,11 +146,11 @@ function removerTurma(index) {
   atualizarTela();
 }
 
-/* disponibiliza as funções para onclick inline nos cards/tabela */
+
 window.editarTurma = editarTurma;
 window.removerTurma = removerTurma;
 
-/* ---------- GERENCIAR ALUNOS (abrir modal, adicionar, editar, remover) ---------- */
+
 function abrirAlunos(index) {
   turmaAtual = index;
   const turma = turmas[index];
@@ -161,7 +160,7 @@ function abrirAlunos(index) {
   modalAlunos.style.display = "block";
 }
 
-/* monta lista de alunos com botões editar/excluir */
+
 function montarListaAlunos() {
   const turma = turmas[turmaAtual];
   listaAlunos.innerHTML = "";
@@ -171,12 +170,12 @@ function montarListaAlunos() {
   turma.alunos.forEach((aluno, i) => {
     const li = document.createElement("li");
 
-    // área do nome (pode virar input para edição)
+    
     const span = document.createElement("span");
     span.textContent = aluno;
     span.id = `aluno-nome-${i}`;
 
-    // ações (editar / salvar / cancelar / excluir)
+   
     const acoes = document.createElement("div");
     acoes.className = "aluno-acoes";
 
@@ -199,7 +198,7 @@ function montarListaAlunos() {
   });
 }
 
-/* adicionar aluno */
+
 adicionarAluno.onclick = () => {
   const nome = nomeAlunoInput.value.trim();
   if (!nome) return;
@@ -210,11 +209,11 @@ adicionarAluno.onclick = () => {
   atualizarTela();
 };
 
-/* iniciar edição do aluno: substitui o span por input + salvar/cancelar */
+
 function iniciarEditarAluno(i) {
   const li = listaAlunos.children[i];
   if (!li) return;
-  li.innerHTML = ""; // limpar para re-criar
+  li.innerHTML = ""; 
 
   const input = document.createElement("input");
   input.value = turmas[turmaAtual].alunos[i];
@@ -235,7 +234,7 @@ function iniciarEditarAluno(i) {
   li.appendChild(cancelarBtn);
 }
 
-/* salvar edição do aluno */
+
 function salvarEdicaoAluno(i, novoNome) {
   if (!novoNome) {
     alert("Nome inválido.");
@@ -247,7 +246,7 @@ function salvarEdicaoAluno(i, novoNome) {
   atualizarTela();
 }
 
-/* remover aluno */
+
 function removerAluno(i) {
   if (!confirm("Remover este aluno?")) return;
   turmas[turmaAtual].alunos.splice(i, 1);
@@ -256,20 +255,20 @@ function removerAluno(i) {
   atualizarTela();
 }
 
-/* disponibiliza as funções para uso inline (onclick) */
+
 window.abrirAlunos = abrirAlunos;
 window.removerAluno = removerAluno;
 
-/* fechar modal alunos */
+
 fecharAlunos.onclick = () => (modalAlunos.style.display = "none");
 
-/* logout */
+
 document.getElementById("logoutBtn").onclick = () => {
   sessionStorage.removeItem("usuarioLogado");
   window.location.href = "login.html";
 };
 
-/* fecha modais se clicar fora do conteúdo */
+
 window.onclick = (e) => {
   if (e.target === modalTurma) modalTurma.style.display = "none";
   if (e.target === modalAlunos) modalAlunos.style.display = "none";

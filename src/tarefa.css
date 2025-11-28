@@ -15,18 +15,18 @@ body {
   height: 100%;
   background: rgba(0,0,0,0.5);
 
-  /* Flexbox para centralizar */
+  
   display: flex;
-  justify-content: center; /* centraliza horizontal */
-  align-items: center;     /* centraliza vertical */
+  justify-content: center; 
+  align-items: center;     
 }
 
 .modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 300px; /* largura do modal */
-  max-width: 90%; /* responsivo */
+  width: 300px; 
+  max-width: 90%; 
 }
 
 .modal-buttons {
@@ -47,7 +47,7 @@ li.concluida {
 button.editBtn, button.doneBtn {
   margin-left: 5px;
 }
-/* ====== SIDEBAR ====== */
+
 .sidebar {
   width: 230px;
   height: 100vh;
@@ -114,7 +114,7 @@ h1 {
   background-color: #0066cc;
 }
 
-/* ====== SEÇÕES DE TAREFAS ====== */
+
 .tarefa-hoje {
     background: #fff3cd;
     border-left: 5px solid #ffc107;
@@ -126,7 +126,7 @@ h1 {
     opacity: 0.6;
 }
 .conteudo {
-    margin-left: 260px; /* ou o tamanho exato do seu menu */
+    margin-left: 260px; 
 }
 .tarefa-hoje {
     background: #fff3cd;
@@ -139,7 +139,7 @@ h1 {
     opacity: 0.6;
 }
 
-/* Botões mais modernos */
+
 .btn-sm {
     padding: 4px 10px;
     font-size: 14px;

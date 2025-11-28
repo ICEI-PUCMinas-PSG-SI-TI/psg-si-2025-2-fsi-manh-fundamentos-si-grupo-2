@@ -4,7 +4,6 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
   const senha = document.getElementById('cadastroSenha').value.trim();
   const mensagem = document.getElementById('mensagem');
 
-  // Validações simples
   if (!email.includes('@')) {
     mensagem.innerText = 'Email inválido!';
     return;
@@ -14,14 +13,13 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
     return;
   }
 
-  // Verifica se já existe usuário cadastrado
+
   const usuarioExistente = JSON.parse(localStorage.getItem('usuario'));
   if (usuarioExistente && usuarioExistente.email === email) {
     mensagem.innerText = 'Este email já está cadastrado!';
     return;
   }
 
-  // Salva usuário no localStorage
   localStorage.setItem('usuario', JSON.stringify({ email, senha }));
   mensagem.innerText = 'Cadastro realizado com sucesso! Redirecionando para login...';
 

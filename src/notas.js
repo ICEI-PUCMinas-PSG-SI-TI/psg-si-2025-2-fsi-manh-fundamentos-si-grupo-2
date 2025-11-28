@@ -1,16 +1,15 @@
-// notas.js — Manage assignments, grades and tasks with Chart.js pie charts
+
 (function(){
   const STORAGE_ASSIGN = 'notas_assignments_v1';
   const STORAGE_GRADES = 'notas_grades_v1';
   const STORAGE_TASKS = 'notas_tasks_v1';
 
-  // Attempt to reuse students from frequencia if available
   function loadStudentsFromFrequencia(){
     try{
       const raw = localStorage.getItem('frequencia_students_v1');
       if(raw) return JSON.parse(raw);
     }catch(e){ }
-    // fallback sample
+    
     return [
       { id:1, name:'Ana Silva', turma:'A' },
       { id:2, name:'Bruno Souza', turma:'A' },
@@ -21,7 +20,7 @@
 
   let allStudents = [];
   let assignments = [];
-  // grades: { studentId: { assignmentId: number } }
+  
   let grades = {};
   let tasks = [];
 
@@ -55,9 +54,9 @@
   function renderTable(){
     const tbl = document.getElementById('gradesTable');
     if(!tbl) return;
-    // header
+    
     let hdr = '<thead><tr><th>Aluno</th><th>Turma</th>' + assignments.map(a => `<th>${a.name}</th>`).join('') + '<th>Média</th></tr></thead>';
-    // body
+    
     const selTurma = document.getElementById('filterTurmaNotas').value;
     const students = (selTurma === 'all') ? allStudents : allStudents.filter(s => s.turma === selTurma);
     let body = '<tbody>' + students.map(s => {
@@ -72,7 +71,6 @@
 
     tbl.innerHTML = hdr + body;
 
-    // listeners on inputs
     tbl.querySelectorAll('.grade-input').forEach(inp => {
       inp.addEventListener('change', (e) => {
         const sid = Number(inp.dataset.student);
@@ -87,7 +85,7 @@
       });
     });
 
-    // clicking row selects student
+    
     tbl.querySelectorAll('tbody tr').forEach(tr => {
       tr.addEventListener('click', () => {
         const id = Number(tr.dataset.id);
@@ -113,7 +111,7 @@
     const id = 'a' + Date.now();
     const assign = { id, name };
     assignments.push(assign);
-    // no default grades
+    
     saveState();
     return assign;
   }
@@ -144,7 +142,7 @@
   }
 
   function studentDistribution(studentId){
-    // distribution of this student's grades among buckets
+    
     const buckets = { 'A (90-100)':0, 'B (80-89)':0, 'C (70-79)':0, 'D (60-69)':0, 'F (<60)':0 };
     if(!studentId) return buckets;
     assignments.forEach(a => {
@@ -160,7 +158,7 @@
   }
 
   function updateCharts(){
-    // turma chart
+    
     const turma = document.getElementById('filterTurmaNotas').value || 'all';
     const buckets = bucketDistributionForTurma(turma);
     const labels = Object.keys(buckets);
@@ -171,7 +169,7 @@
       turmaPie = new Chart(ctxT, { type:'pie', data:{ labels, datasets:[{ data, backgroundColor:['#16a34a','#0ea5e9','#f59e0b','#ef4444','#6b7280'] }] }, options:{responsive:true} });
     }
 
-    // student chart
+  
     const studentBuckets = studentDistribution(selectedStudentId);
     const sLabels = Object.keys(studentBuckets);
     const sData = Object.values(studentBuckets);

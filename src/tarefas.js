@@ -1,6 +1,4 @@
-// ------------------------------------------
-// GET E SET LOCALSTORAGE
-// ------------------------------------------
+
 function getTarefas() {
     return JSON.parse(localStorage.getItem("tarefas")) || [];
 }
@@ -9,33 +7,30 @@ function salvarTarefas(tarefas) {
     localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
-// ------------------------------------------
-// OBTÉM USUÁRIO ATUAL (EMAIL DO LOGIN OU INPUT)
-// ------------------------------------------
+
 function getUsuarioAtual() {
     let usuario = "";
 
-    // 1 — TENTA PEGAR DO LOGIN
+    
     const storedLogin = sessionStorage.getItem("usuarioLogado");
     if (storedLogin) {
         const userObj = JSON.parse(storedLogin);
 
-        // LOGIN SALVA COMO {email: "..."}
+        
         usuario =
-            userObj.email ||     // formato correto
-            userObj.username ||  // fallback
-            userObj.nome ||      // fallback
+            userObj.email ||     
+            userObj.username ||  
+            userObj.nome ||      
             (typeof userObj === "string" ? userObj : "");
     }
 
-    // 2 — SE EXISTIR INPUT USUARIO → USA E SALVA
+    
     const usuarioInput = document.getElementById("usuario");
     if (usuarioInput && usuarioInput.value.trim() !== "") {
         usuario = usuarioInput.value.trim();
         localStorage.setItem("ultimoUsuario", usuario);
     }
 
-    // 3 — SE DER F5 → RECUPERA O ÚLTIMO USUÁRIO
     if (!usuario) {
         usuario = localStorage.getItem("ultimoUsuario") || "";
         if (usuarioInput) usuarioInput.value = usuario;
@@ -44,9 +39,7 @@ function getUsuarioAtual() {
     return usuario;
 }
 
-// ------------------------------------------
-// ADICIONAR TAREFA
-// ------------------------------------------
+
 function addTarefa() {
     const usuario = getUsuarioAtual();
     const texto = document.getElementById("tarefaTexto").value.trim();
@@ -61,7 +54,7 @@ function addTarefa() {
 
     tarefas.push({
         id: Date.now(),
-        usuario,  // <-- agora é o email
+        usuario,  
         texto,
         data,
         concluida: false
@@ -74,9 +67,7 @@ function addTarefa() {
     document.getElementById("tarefaData").value = "";
 }
 
-// ------------------------------------------
-// CONCLUIR
-// ------------------------------------------
+
 function concluirTarefa(id) {
     const tarefas = getTarefas();
     const t = tarefas.find(t => t.id === id);
@@ -85,9 +76,6 @@ function concluirTarefa(id) {
     renderTarefas();
 }
 
-// ------------------------------------------
-// EDITAR
-// ------------------------------------------
 function editarTarefa(id) {
     const novoTexto = prompt("Nova descrição:");
     if (!novoTexto) return;
@@ -100,18 +88,14 @@ function editarTarefa(id) {
     renderTarefas();
 }
 
-// ------------------------------------------
-// EXCLUIR
-// ------------------------------------------
+
 function excluirTarefa(id) {
     const tarefas = getTarefas().filter(t => t.id !== id);
     salvarTarefas(tarefas);
     renderTarefas();
 }
 
-// ------------------------------------------
-// RENDERIZAR
-// ------------------------------------------
+
 function renderTarefas() {
     const usuario = getUsuarioAtual();
     if (!usuario) return;
@@ -143,9 +127,7 @@ function renderTarefas() {
     });
 }
 
-// ------------------------------------------
-// ATUALIZA AO DIGITAR USUÁRIO (para quem não tem login)
-// ------------------------------------------
+
 const usuarioInput = document.getElementById("usuario");
 if (usuarioInput) {
     usuarioInput.addEventListener("input", renderTarefas);

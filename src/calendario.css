@@ -1,0 +1,197 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f4f6fa;
+    color: #333;
+    margin: 0;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    background: #002b5b; 
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.top-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 100px;
+    height: 75px;
+    border-radius: 8px;
+}
+
+.school-name {
+    font-size: 1.6em;
+    font-weight: 700; 
+    letter-spacing: 0.5px;
+}
+
+.user-area {
+    font-size: 1.1em;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 80px);
+    background-color: #002855; 
+    color: white;
+    padding: 20px 0;
+    overflow-y: auto;
+    z-index: 900;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #004080;
+    border-radius: 8px;
+}
+
+.sidebar a.active-link { 
+    background-color: #004080; 
+    border-radius: 8px;
+}
+
+
+.content {
+    margin-left: 240px; 
+    padding: 120px 40px 40px 40px; 
+    flex: 1;
+    min-height: calc(100vh - 120px); 
+    overflow: auto;
+}
+
+
+
+.calendario-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.lista-eventos {
+    margin-top: 20px;
+}
+
+.evento-item {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.evento-data-box {
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    width: 90px;
+    flex-shrink: 0;
+}
+
+.evento-dia {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.evento-mes {
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.evento-detalhes {
+    flex-grow: 1;
+}
+
+.evento-titulo {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.evento-tag {
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+
+.tipo-noticia {
+    background-color: #ffc107;
+    color: #333;
+    border-left: 5px solid #ff9800;
+}
+.tipo-noticia .evento-data-box {
+    background-color: #ffe082;
+}
+
+.tipo-prova {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+}
+.tipo-prova .evento-data-box {
+    background-color: #f5c6cb;
+}
+
+
+.tipo-secretaria {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-left: 5px solid #17a2b8;
+}
+.tipo-secretaria .evento-data-box {
+    background-color: #b3e0e9;
+}
