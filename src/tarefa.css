@@ -87,7 +87,7 @@ button.editBtn, button.doneBtn {
   background-color: #004b99;
 }
 
-.container {
+.content {
   margin-left: 250px;
   padding: 40px;
   width: calc(100% - 250px);
@@ -143,4 +143,54 @@ h1 {
 .btn-sm {
     padding: 4px 10px;
     font-size: 14px;
+}
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f4f6fa;
+    color: #333;
+    margin: 0;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    background: #002b5b; 
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.top-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 100px;
+    height: 75px;
+    border-radius: 8px;
+}
+
+.school-name {
+    font-size: 1.6em;
+    font-weight: 700; 
+    letter-spacing: 0.5px;
+}
+
+.user-area {
+    font-size: 1.1em;
 }
