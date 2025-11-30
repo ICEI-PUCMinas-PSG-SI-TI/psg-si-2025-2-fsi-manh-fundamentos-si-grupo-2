@@ -1,4 +1,4 @@
-
+/* --- LAYOUT DA PÁGINA INICIAL (Dashboard) --- */
 
 * {
     box-sizing: border-box;
@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 80px; 
-    background: #002b5b;
+    background: #002b5b; /* COR AZUL ESCURA DA TOPBAR */
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -64,7 +64,7 @@ body {
     left: 0;
     width: 220px;
     height: calc(100vh - 80px);
-    background-color: #002855; 
+    background-color: #002855; /* COR AZUL ESCURA DA SIDEBAR */
     color: white;
     padding: 20px 0;
     overflow-y: auto;
@@ -98,7 +98,7 @@ body {
     border-radius: 8px;
 }
 
-
+/* CONTEÚDO PRINCIPAL */
 .content {
     margin-left: 240px; 
     padding: 120px 40px 40px 40px; 
@@ -107,7 +107,7 @@ body {
     overflow: auto;
 }
 
-
+/* --- ESTILOS DOS CARDS DE NOTÍCIAS (Revisados) --- */
 
 .noticias-container {
     background-color: white;
@@ -117,19 +117,21 @@ body {
 }
 
 .lista-noticias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Garante espaçamento entre os cards */
 }
 
-
+/* Estilo de cada Card de Notícia (CORREÇÃO FINAL: Padding e Botão) */
 .noticia-item {
     background-color: #f0f0f0; 
-    padding: 30px 20px 20px 20px; 
+    /* Aumenta o padding superior para garantir espaço LIMPO para o botão X */
+    padding: 40px 20px 20px 20px; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: relative;
     min-height: 150px;
+    flex: 1 1 300px; /* Garante que os cards sejam responsivos */
 }
 
 .noticia-titulo {
@@ -143,7 +145,7 @@ body {
     font-size: 0.95rem;
 }
 
-
+/* Botão de Excluir (apenas 'X') */
 .btn-excluir {
     position: absolute;
     top: 10px;
@@ -151,13 +153,19 @@ body {
     background-color: #dc3545; 
     color: white;
     border: none;
-    padding: 5px 10px;
+    /* Torna o botão um pequeno quadrado */
+    width: 30px; 
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 0.8em;
+    font-size: 0.9em; 
+    font-weight: bold;
 }
 
-
+/* Estilo para a imagem dentro do card de notícia */
 .noticia-imagem {
     max-width: 100%;
     height: auto;

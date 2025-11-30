@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnAdicionar = document.getElementById('btn-adicionar');
     const formNoticia = document.getElementById('form-noticia');
     const listaNoticias = document.getElementById('lista-noticias');
-    const inputImagem = document.getElementById('imagem'); 
+    const inputImagem = document.getElementById('imagem'); // Novo input de imagem
+
     let noticiasSalvas = JSON.parse(localStorage.getItem('noticias')) || [];
 
     function salvarNoticias() {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Função assíncrona para converter arquivo File para Base64
     function fileToBase64(file) {
         return new Promise((resolve) => {
             if (!file) {
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = () => resolve(reader.result);
-            reader.onerror = () => resolve(null); 
+            reader.onerror = () => resolve(null); // Retorna null em caso de erro
         });
     }
 
@@ -55,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
             infoExpiracao = `<span class="noticia-expiracao">Expira em: ${dataFormatada}</span>`;
         }
         
-        
+        // Adiciona a imagem se a propriedade 'imagem' tiver dados Base64
         const imagemHtml = noticia.imagem ? `<img src="${noticia.imagem}" alt="${noticia.titulo}" class="noticia-imagem">` : '';
 
         novaNoticia.innerHTML = `
-            <button class="btn-excluir" data-id="${noticia.id}">X Excluir</button>
+            <button class="btn-excluir" data-id="${noticia.id}">X </button>
             <h3 class="noticia-titulo">${noticia.titulo}</h3>
             ${imagemHtml}
             <p class="noticia-corpo">${noticia.corpo}</p>
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Inicialização (com exemplos)
     if (noticiasSalvas.length === 0) {
         noticiasSalvas = [
             { id: Date.now() + 1, titulo: "Atenção: Rodízio de Professores", corpo: "Confira a nova escala de rodízio de professores. Válido a partir de segunda-feira.", expiracao: null, imagem: null },
@@ -103,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     renderizarNoticias();
 
-    
+    // Eventos do Formulário (Assíncrono devido ao tratamento da imagem)
     btnAdicionar.onclick = function() {
-        formNoticia.reset(); 
+        formNoticia.reset(); // Limpa o formulário ao abrir
         modalNoticia.show(); 
     }
 
@@ -113,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         const imagemFile = inputImagem.files[0];
-        
+        // Converte o arquivo de imagem para Base64
         const imagemBase64 = await fileToBase64(imagemFile); 
 
         const titulo = document.getElementById('titulo').value;
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             titulo: titulo,
             corpo: corpo,
             expiracao: dataExpiracao,
-            imagem: imagemBase64 
+            imagem: imagemBase64 // Salva a imagem
         };
 
         noticiasSalvas.unshift(novaNoticiaData);
