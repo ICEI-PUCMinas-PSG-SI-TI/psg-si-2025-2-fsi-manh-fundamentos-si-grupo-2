@@ -2,9 +2,9 @@
 const professoraLogada = sessionStorage.getItem("usuarioLogado");
 if (!professoraLogada) {
   alert("Você precisa estar logada para acessar as turmas.");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
-document.getElementById("nomeProfessora").textContent = professoraLogada;
+
 
 
 const containerTurmas = document.getElementById("containerTurmas");
@@ -263,10 +263,6 @@ window.removerAluno = removerAluno;
 fecharAlunos.onclick = () => (modalAlunos.style.display = "none");
 
 
-document.getElementById("logoutBtn").onclick = () => {
-  sessionStorage.removeItem("usuarioLogado");
-  window.location.href = "login.html";
-};
 
 
 window.onclick = (e) => {

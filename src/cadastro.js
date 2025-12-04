@@ -24,6 +24,6 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
   mensagem.innerText = 'Cadastro realizado com sucesso! Redirecionando para login...';
 
   setTimeout(() => {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }, 1500);
 });
