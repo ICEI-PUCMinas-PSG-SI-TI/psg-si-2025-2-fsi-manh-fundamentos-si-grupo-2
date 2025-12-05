@@ -39,7 +39,7 @@ function verMais(index) {
   const matriculas = JSON.parse(localStorage.getItem("matriculas")) || [];
   const matricula = matriculas[index];
 
-  // Monta os detalhes em duas colunas
+
   let detalhes = `
     <div class="row">
       <div class="col-md-6">

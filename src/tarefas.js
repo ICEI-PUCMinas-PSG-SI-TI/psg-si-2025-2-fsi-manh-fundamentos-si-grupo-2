@@ -100,7 +100,7 @@ function renderTarefas() {
     const usuario = getUsuarioAtual();
     if (!usuario) return;
 
-    const hoje = new Date().toISOString().split("T")[0];
+    const hoje = new Date().toLocaleDateString('en-CA');
     let tarefas = getTarefas().filter(t => t.usuario === usuario);
 
     tarefas.sort((a, b) => new Date(a.data) - new Date(b.data));

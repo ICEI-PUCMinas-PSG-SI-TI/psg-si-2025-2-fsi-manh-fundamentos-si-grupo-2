@@ -12,7 +12,7 @@
   <header class="top-bar">
     <div class="top-content">
       <div class="logo-area">
-        <img src="/psg-si-2025-2-fsi-manh-fundamentos-si-grupo-2/docs/image/logoEscolaColoridosem.png" alt="Logo da Escola" class="logo-img">
+        <img src="/docs/image/logoEscolaColoridosem.png" alt="Logo da Escola" class="logo-img">
         <span class="school-name">Jardim Encantado</span>
       </div>
 
@@ -39,107 +39,27 @@
         <div class="card-body ">
           <h3 class="mb-3">Tarefas </h3>
 
-          <form id="taskForm" autocomplete="off" class="mb-3">
+          <form id="taskForm" onsubmit="addTarefa(); return false;" autocomplete="off" class="mb-3">
             <div class="input-group mb-2">
-              <input id="taskInput" class="form-control" placeholder="Digite sua tarefa" required>
+              <input id="tarefaTexto" class="form-control" placeholder="Digite sua tarefa" required>
             </div>
             <div class="input-group mb-2">
-              <input id="taskDate" type="date" class="form-control" required>
+              <input id="tarefaData" type="date" class="form-control" required>
             </div>
             <button class="btn btn-primary w-100">Adicionar</button>
           </form>
 
-          <ul id="tasksList" class="list-group list-group-flush"></ul>
+          <div id="listaTarefas" class="list-group list-group-flush"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</body>
+<script src="tarefas.js"></script>
 <script>
-const STORAGE = 'tarefas_dia_v1';
-let tasks = [];
-
-function load() {
-  tasks = JSON.parse(localStorage.getItem(STORAGE) || '[]');
-}
-function save() {
-  localStorage.setItem(STORAGE, JSON.stringify(tasks));
-}
-
-function isToday(dateStr) {
-  const today = new Date().toISOString().split('T')[0];
-  return dateStr === today;
-}
-
-function render() {
-  const ul = document.getElementById('tasksList');
-  ul.innerHTML = '';
-
-  tasks.forEach(t => {
-    const li = document.createElement('li');
-    li.className = 'list-group-item';
-
-    const card = document.createElement('div');
-    card.className = 'task-card d-flex align-items-start gap-2';
-    if (isToday(t.date)) card.classList.add('task-today');
-    if (t.done) card.classList.add('task-done');
-
-    const check = document.createElement('input');
-    check.type = 'checkbox';
-    check.checked = t.done;
-    check.addEventListener('change', () => {
-      t.done = check.checked;
-      save(); render();
-    });
-
-    const text = document.createElement('span');
-    text.className = 'task-text';
-    text.contentEditable = true;
-    text.innerText = t.text;
-    text.addEventListener('blur', () => {
-      t.text = text.innerText.trim();
-      save();
-    });
-
-    const date = document.createElement('div');
-    date.className = 'date-label';
-    date.innerText = new Date(t.date).toLocaleDateString('pt-BR');
-
-    const del = document.createElement('button');
-    del.className = 'icon-btn';
-    del.innerHTML = '🗑️';
-    del.addEventListener('click', () => {
-      tasks = tasks.filter(x => x.id !== t.id);
-      save(); render();
-    });
-
-    card.appendChild(check);
-
-    const group = document.createElement('div');
-    group.className = 'd-flex flex-column flex-grow-1';
-    group.appendChild(text);
-    group.appendChild(date);
-
-    card.appendChild(group);
-    card.appendChild(del);
-    li.appendChild(card);
-    ul.appendChild(li);
+  // Chama a renderização inicial quando o DOM estiver pronto
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderTarefas === 'function') renderTarefas();
   });
-}
-
-document.getElementById('taskForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const input = document.getElementById('taskInput');
-  const date = document.getElementById('taskDate');
-
-  tasks.push({ id: Date.now(), text: input.value.trim(), date: date.value, done:false });
-  save(); render();
-  input.value = '';
-});
-
-load();
-render();
 </script>
-</body>
 </html>
